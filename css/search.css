@@ -1,0 +1,45 @@
+.search {
+    width: 100%;
+    position: relative;
+    display: flex;
+  }
+  
+  .searchRecipes {
+    width: 100%;
+    border: 3px solid #3ab49d;
+    border-right: none;
+    padding: 5px;
+    height: 36px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    color: #9DBFAF;
+    -moz-appearance: none;/* older firefox */
+    -webkit-appearance: none; /* safari, chrome, edge and ie mobile */
+    appearance: none;
+  }
+  
+  .searchRecipes:focus{
+    color: #70c5b5;
+  }
+  
+  .searchButton {
+    width: 40px;
+    height: 36px;
+    border: 1px solid #3ab49d;
+    background: #3ab49d;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 20px;
+  }
+          
+  .searchButton:focus {
+      outline: 0;
+  }
+  
+  .searchWrap {
+      width: 50%;
+      margin: 0 auto 1em;
+  }
+  
