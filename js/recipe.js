@@ -4,27 +4,29 @@ const apiKey = '93ef899b6a19a965c8c69686bd84e4e7';
 
 //Selectors
 
-const searchInput = document.getElementById('searchButton');
+const searchInput = document.getElementById('searchTerm');
 const searchButton = document.getElementById('searchButton');
 
 //Event Listeners
 searchButton.addEventListener('click',searchForRecipes);
-
-
-let searchTerm='chicken';
 
 function searchForRecipes()
 {
     //Connect to the API using XMLHttpRequest
     var request = new XMLHttpRequest();
 
-    request.open('GET', 'https://api.edamam.com/search?$q={searchTerm}&api_id={YOUR_APP_ID}&app_key={YOUR_APP_KEY}');
+
+    request.open('GET', `https://api.edamam.com/search?q=${searchInput.value}&app_id=${apiId}&app_key=${apiKey}`);
 
     request.onload = function(){
         var response = request.response;
         var parsedData = JSON.parse(response);
+
+        console.log(parsedData);
     
-        foreach(item in parsedData)
+        forEach(element => {
+            
+        });(item in parsedData)
         {
             let recipe = document.createElement('li');
             recipe.innerHTML = parsedData[item].name;
@@ -46,7 +48,7 @@ function searchForRecipes()
 //------------------------------
 
 $.ajax({
-    url:'https://api.edamam.com/search?q=chickenpp_id=${YOUR_APP_ID}&app_key=${YOUR_APP_KEY}',
+    url:'https://api.edamam.com/search?q=chicken&app_id=086bc706&app_key=93ef899b6a19a965c8c69686bd84e4e7',
     success: function(response)
     {
         console.log(response)
@@ -56,7 +58,7 @@ $.ajax({
 //Connect to the API using Fetch
 //------------------------------
 
-fetch('https://api.edamam.com/search?q=chickenpp_id=${YOUR_APP_ID}&app_key=${YOUR_APP_KEY}')
+fetch('https://api.edamam.com/search?q=chicken&app_id=086bc706&app_key=93ef899b6a19a965c8c69686bd84e4e7')
 .then(function(response){
     return response.json();
 }
