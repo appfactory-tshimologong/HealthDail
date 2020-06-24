@@ -1,35 +1,57 @@
-// Edamam API id and key, stored as constants because they will not change.
-const APIID = '086bc706';
-const APIKEY = '93ef899b6a19a965c8c69686bd84e4e7';
+// Edamam API
+const apiId = '086bc706';
+const apiKey = '93ef899b6a19a965c8c69686bd84e4e7';
 
 //Selectors
+
 const searchInput = document.getElementById('searchTerm');
 const searchButton = document.getElementById('searchButton');
+const searchList = document.getElementById('recipes'); 
+
+parsedRecipes:any = [];
+recipesList:any = [];
+found = false;
 
 //Event Listeners
 searchButton.addEventListener('click',searchForRecipes);
 
-function displayResult(result)
+function searchForRecipes()
 {
-    console.log(result);  
-}
+    //Connect to the API using XMLHttpRequest
+    var request = new XMLHttpRequest();
 
-
-function searchForRecipes()  //This is an example of a NAMED FUNCTION
-{
-    //1.  Connect to the API using XMLHttpRequest
-    let request = new XMLHttpRequest();
-    let parsedData;
-
-    request.open('GET', `https://api.edamam.com/search?q=chicken&app_id=${APIID}&app_key=${APIKEY}`);
-
-    request.onload = function(){  //This is an example of an anonymous function
-
-        parsedData = JSON.parse(request.response);
-
-        //2.  Display the results returned from the API
-        displayResult(parsedData);  
+    //Remove existing search result if it exist
+    while(searchList.hasChildNodes()){
+        searchList.removeChild(searchList.lastChild);
     }
+    
+    request.open('GET', `https://api.edamam.com/search?q=${searchInput.value}&app_id=${apiId}&app_key=${apiKey}`);
 
+    request.onreadystatechange = function(){ //Use anonymous function to observe request states
+
+        if(request.readyState == 4 && request.status == 200){ //Check if request state is on complete(4) and request status is successful (200)
+            
+            //Get request response and assign it to an array
+            let response = request.response;
+            parsedRecipes = JSON.parse(response);
+            recipesList = parsedRecipes.hits;
+
+            //Loop through the array that contains recipes and push them to the list
+
+            recipesList.forEach(element => {  
+                let item = document.createElement('li'); 
+                let link  = document.createElement('a');  
+                link.textContent = element.recipe.label; 
+                link.href = element.recipe.url;
+                item.appendChild(link);  
+                searchList.append(item)
+            }); 
+            //Check if search was found
+            if(recipesList.length == 0){
+                searchList.append('Search result not found...');
+            }
+        }
+    } 
     request.send();
 }
+ 
