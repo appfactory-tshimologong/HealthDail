@@ -1,74 +1,35 @@
-// Edamam API
-const apiId = '086bc706';
-const apiKey = '93ef899b6a19a965c8c69686bd84e4e7';
+// Edamam API id and key, stored as constants because they will not change.
+const APIID = '086bc706';
+const APIKEY = '93ef899b6a19a965c8c69686bd84e4e7';
 
 //Selectors
-
 const searchInput = document.getElementById('searchTerm');
 const searchButton = document.getElementById('searchButton');
 
 //Event Listeners
 searchButton.addEventListener('click',searchForRecipes);
 
-function searchForRecipes()
+function displayResult(result)
 {
-    //Connect to the API using XMLHttpRequest
-    var request = new XMLHttpRequest();
+    console.log(result);  
+}
 
 
-    request.open('GET', `https://api.edamam.com/search?q=${searchInput.value}&app_id=${apiId}&app_key=${apiKey}`);
+function searchForRecipes()  //This is an example of a NAMED FUNCTION
+{
+    //1.  Connect to the API using XMLHttpRequest
+    let request = new XMLHttpRequest();
+    let parsedData;
 
-    request.onload = function(){
-        var response = request.response;
-        var parsedData = JSON.parse(response);
+    request.open('GET', `https://api.edamam.com/search?q=chicken&app_id=${APIID}&app_key=${APIKEY}`);
 
-        console.log(parsedData);
-    
-        forEach(element => {
-            
-        });(item in parsedData)
-        {
-            let recipe = document.createElement('li');
-            recipe.innerHTML = parsedData[item].name;
-            document.body.appendChild(recipe);
+    request.onload = function(){  //This is an example of an anonymous function
 
-            let image = document.createElement('img');
-            image.setAttribute('src', parsedData[item].imgUrl);
-            document.body.appendChild(image);
-            }   
+        parsedData = JSON.parse(request.response);
+
+        //2.  Display the results returned from the API
+        displayResult(parsedData);  
     }
 
     request.send();
 }
-
-
-
-
-/* //Connect to the API using AJAX
-//------------------------------
-
-$.ajax({
-    url:'https://api.edamam.com/search?q=chicken&app_id=086bc706&app_key=93ef899b6a19a965c8c69686bd84e4e7',
-    success: function(response)
-    {
-        console.log(response)
-    }
-})
-
-//Connect to the API using Fetch
-//------------------------------
-
-fetch('https://api.edamam.com/search?q=chicken&app_id=086bc706&app_key=93ef899b6a19a965c8c69686bd84e4e7')
-.then(function(response){
-    return response.json();
-}
-)
-.then(
-    function(respData){
-        console.log(respData);
-    }
-)
-
-
-
- */
