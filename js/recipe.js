@@ -1,9 +1,8 @@
 // Edamam API
-const apiId = '086bc706';
-const apiKey = '93ef899b6a19a965c8c69686bd84e4e7';
+const APIID = '086bc706';
+const APIKEY = '93ef899b6a19a965c8c69686bd84e4e7';
 
 //Selectors
-
 const searchInput = document.getElementById('searchTerm');
 const searchButton = document.getElementById('searchButton');
 const searchList = document.getElementById('recipes'); 
@@ -16,14 +15,14 @@ found = false;
 searchButton.addEventListener('click',searchForRecipes);
 
 function searchForRecipes()
-{
-    //Connect to the API using XMLHttpRequest
-    var request = new XMLHttpRequest();
-
-    //Remove existing search result if it exist
+{  
+    //Remove existing search result if it exists
     while(searchList.hasChildNodes()){
         searchList.removeChild(searchList.lastChild);
     }
+
+    //Connect to the API using XMLHttpRequest
+    var request = new XMLHttpRequest();
     
     request.open('GET', `https://api.edamam.com/search?q=${searchInput.value}&app_id=${apiId}&app_key=${apiKey}`);
 
