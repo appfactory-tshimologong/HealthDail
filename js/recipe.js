@@ -9,11 +9,27 @@ const searchList = document.getElementById('recipes');
 
 parsedRecipes:any = [];
 recipesList:any = [];
-found = false;
 
 //Event Listeners
 searchButton.addEventListener('click',searchForRecipes);
 
+//Object Constructors
+function Recipe(label,source,url,image,ingredients)
+{
+    this.label = label;
+    this.source = source;
+    this.url=url;
+    this.image = image;
+    this.ingredients = ingredients;
+}
+
+function Ingredient(id,name,measurement)
+{
+    this.name = name;
+    this.measurement = measurement;
+}
+
+//Functions
 function searchForRecipes()
 {  
     //Remove existing search result if it exists
@@ -24,7 +40,7 @@ function searchForRecipes()
     //Connect to the API using XMLHttpRequest
     var request = new XMLHttpRequest();
     
-    request.open('GET', `https://api.edamam.com/search?q=${searchInput.value}&app_id=${apiId}&app_key=${apiKey}`);
+    request.open('GET', `https://api.edamam.com/search?q=${searchInput.value}&app_id=${APIID}&app_key=${APIKEY}`);
 
     request.onreadystatechange = function(){ //Use anonymous function to observe request states
 
@@ -38,6 +54,21 @@ function searchForRecipes()
             //Loop through the array that contains recipes and push them to the list
 
             recipesList.forEach(element => {  
+                
+                let single = element.recipe;
+                let recipe = new Recipe(single.label,single.source,single.url,single.image);
+
+                let ingredientlist=single.ingredients;
+                let ingredients = [];
+                
+                ingredientlist.forEach(element=>{
+                    let ingredient = new Ingredient(element.text,element.weight);
+                    
+                    ingredients.append(ingredient)
+                });
+                
+                recipe.ingredients = ingredients;
+
                 let item = document.createElement('li'); 
                 let link  = document.createElement('a');  
                 link.textContent = element.recipe.label; 
