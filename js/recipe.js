@@ -7,8 +7,6 @@ const searchInput = document.getElementById('searchTerm');
 const searchButton = document.getElementById('searchButton');
 const searchList = document.getElementById('recipes'); 
 
-parsedRecipes:any = [];
-recipesList:any = [];
 
 //Event Listeners
 searchButton.addEventListener('click',searchForRecipes);
@@ -29,7 +27,10 @@ function Ingredient(id,name,measurement)
     this.measurement = measurement;
 }
 
+//let tryScope = parsedRecipes;
 //Functions
+//assume = make an ass of u and me!
+//---------------------------------
 function searchForRecipes()
 {  
     //Remove existing search result if it exists
@@ -48,6 +49,11 @@ function searchForRecipes()
             
             //Get request response and assign it to an array
             let response = request.response;
+            //typescript declaration
+            //---------------------
+            parsedRecipes:any = [];
+            recipesList:any = [];
+
             parsedRecipes = JSON.parse(response);
             recipesList = parsedRecipes.hits;
 
@@ -64,7 +70,7 @@ function searchForRecipes()
                 ingredientlist.forEach(element=>{
                     let ingredient = new Ingredient(element.text,element.weight);
                     
-                    ingredients.append(ingredient)
+                    //ingredients.append(ingredient)
                 });
                 
                 recipe.ingredients = ingredients;

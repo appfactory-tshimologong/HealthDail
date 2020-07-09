@@ -1,93 +1,74 @@
 /* COLOUR PALETTE
-------------------*/
+------------------
 
-/*
-orangeskin:#F2701A;
-flame: #e14a19ff;
-black-olive: #484538ff;
-pale-spring-bud: #cad49dff;
-tea-green: #d4eac8ff;
-columbia-blue: #c0d8e0ff;
+pale-purple-pantone: #f2e7f8ff;
+azure-x-11-web-color: #e8fcfdff;
+shiny-shamrock: #6ca87fff;
+forest-green-traditional: #194a1eff;
+charcoal: #2c3848ff;
+princeton-orange: #f98320ff;
 
 almost-black:#343434;
 almost-white: #f7fff7
-*/
 
-/* FONT FAMILIES
------------------*/
+FONT FAMILIES
+-----------------
 
-/* headings :   
-   text: 
-*/
+ headings : 'Charmonman', cursive;
+ text:      'Raleway', sans-serif;
 
-/* Global Styles
--------------------*/
+ */
 
-html{
+* {
     box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
 
-*,*:before, *:after{
-    box-sizing: inherit;
+html, body, .wrapper {
+	height: 100%;
 }
 
 body{
-    background-color:#d4eac8 ;
-    color:#343434;
-    margin:0;
-    padding:0;
     font-family: 'Raleway', sans-serif;
-    line-height: 1.5;
+    margin: auto;
+    color:#343434;
 }
 
-img{
-    width:300px;
+header {
+    padding-top: 1em;
 }
 
-a{
-    color:#484538ff;
+h1,h2,h3 {
+   font-family: 'Charmonman', cursive;
+   font-weight: 700;
 }
 
-a:hover{
-    text-decoration:none;
+h2 {
+    font-size: 2.3em;
+    text-shadow: 0 0 3px;
+    color: #e8fcfdff;
 }
 
-h1,h2 {
-    font-family: 'Charmonman', cursive;
-    font-weight: 700;
-    padding-top: 10px;
-    margin:0;
+button {
+    border-radius: 15px;
+    padding: .5rem 1rem;
+    margin-top: 15px;
+    min-width: 125px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: .75rem;
+    text-decoration: none;
 }
 
-h1{
-    font-size: 55px;
+.wrapper {
+    min-height: 100vh;
+    overflow: auto;
+    height: auto; 
 }
 
-h2{
-    font-size:35px;
-}
-
-.content-wrapper{
-    max-width: 800px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 50px;
-}
-
-/* WebSite Welcome
---------------------*/
-
-.welcome {
-    background-color: #d4eac8ff;
-    text-align: center;
-    background-image: url("../Images/Welcome.jpg"); 
-    background-repeat: no-repeat;
-    background-position: top;
-    background-size: 70%;
-    block-size: 550px;
-}
-
-/* Main Menu
+/* Navigation
 --------------------*/
 nav{
     margin:10px 10px 20px;
@@ -130,25 +111,4 @@ nav a:hover{
     float:right;
 }
 
-/* Contact Info
--------------------*/
-footer{
-    margin-top:40px;  
-}
-
-footer h2{
-    font-family:'Raleway', sans-serif;
-    font-weight: 400;
-    font-size: 20px;
-    text-align:center;
-    font-size: 20px;
-    text-decoration:  underline;  
-}
-
-footer ul{
-    list-style-type: none;
-    text-align: center;
-}
-#recipes{
-    list-style-type: none;
-}
+ 

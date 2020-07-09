@@ -1,0 +1,118 @@
+/* 
+COLOUR PALETTE
+------------------
+pale-purple-pantone: #f2e7f8ff;
+azure-x-11-web-color: #e8fcfdff;
+shiny-shamrock: #6ca87fff;
+forest-green-traditional: #194a1eff;
+charcoal: #2c3848ff;
+princeton-orange: #f98320ff;
+
+almost-black:#343434;
+almost-white: #f7fff7
+
+ FONT FAMILIES
+-----------------
+
+ headings : 'Charmonman', cursive;
+ text:      'Raleway', sans-serif;
+
+ */
+ #logo h1 {
+    color:#e8fcfdff;
+    background-color: rgba(7, 158, 65, 0.3);
+    margin: 0.25em;
+    padding: .1rem;
+    font-size:5em;
+    text-align: center;
+    text-shadow: 0 0 4px;
+    border-radius: 10px;
+}
+
+ #login { 
+    background: url(/image/Canva\ -\ Top\ View\ of\ Pancakes\ with\ Berries.jpg) no-repeat bottom center fixed;
+    background-size: contain;
+}
+#login #sign header { /* change header bg color */
+    background-color: rgb(16,122,162);
+}
+
+#login .wrapper {
+    background: linear-gradient(0deg, rgba(1,19,97,0.7) 0%, rgba(3,208,202,0.4) 68%);
+}
+
+#loginForm { /* set form bg color to a white with slight transparency*/
+    background-color: rgba(255,255,255,.9);
+}
+
+#sign article#loginForm { /* make labels align left */
+    text-align: left;
+}
+
+#sign article#loginForm div { /* align the button to be center */
+    text-align: center; 
+}
+
+label, input { 
+    display: block;
+}
+
+label { /* syle the labels  */
+    font-size: .8rem;
+    color: #767676;
+}
+
+input {
+    margin-bottom: 1em;
+    border-radius: 6px;
+    padding: 6px;
+    border: solid 1px #9B9B9B;
+    width: 100%;
+}
+
+#loginBtn {
+    background-color: rgb(16,122,162);
+    border: solid 2px rgb(16,122,162);
+    margin-bottom: 25px;
+}
+
+form .fas { /* color the font awesome icons */
+    color: #d1d1d1;
+}
+
+#sign aside p { /* style the forgot login info */
+    font-size: .625rem;
+    text-align: center;
+}
+
+aside a {
+    color: #107AA2;
+}
+
+
+div#pwdWrap {
+    display: flex; 
+    align-items: center; 
+    border: solid 1px #9b9b9b; 
+    background-color: #fff; 
+    border-radius: 6px;
+}
+
+form .fa-eye {
+    margin: 0 6px; 
+    cursor: pointer;
+    color: #888; 
+}
+
+form .fa-eye-slash {
+    margin: 0 6px; 
+    cursor: pointer;
+    color: #888; 
+    font-size: .95em; 
+}
+
+input#password {
+    margin-bottom: 0; 
+    border: none; 
+}
+

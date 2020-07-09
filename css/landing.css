@@ -1,0 +1,125 @@
+/* 
+COLOUR PALETTE
+------------------
+pale-purple-pantone: #f2e7f8ff;
+azure-x-11-web-color: #e8fcfdff;
+shiny-shamrock: #6ca87fff;
+forest-green-traditional: #194a1eff;
+charcoal: #2c3848ff;
+princeton-orange: #f98320ff;
+
+almost-black:#343434;
+almost-white: #f7fff7
+
+ FONT FAMILIES
+-----------------
+
+ headings : 'Charmonman', cursive;
+ text:      'Raleway', sans-serif;
+
+ */
+
+#logo h1 {
+    color:#e8fcfdff;
+    background-color: rgba(7, 158, 65, 0.3);
+    margin: 0.25em;
+    padding: .1rem;
+    font-size:5em;
+    text-align: center;
+    text-shadow: 0 0 4px;
+    border-radius: 10px;
+}
+
+
+#landing { 
+    background: url(/image/Canva\ -\ Sliced\ Lemon\ and\ Basil\ Leaves\ on\ Glass.jpg) no-repeat bottom center fixed;
+    background-size: contain;
+}
+
+
+#landing .wrapper {
+    background: linear-gradient(0deg, rgba(1,19,97,0.7) 0%, rgba(3,208,202,0.4) 68%);
+}
+
+#welcome {
+    width: 90%;
+	max-width: 800px;
+    margin: 0 auto 3em;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,.6);
+  }
+
+#welcome header {
+    background-color: rgba(7,121,136,.9);
+    border-radius: 10px 10px 0 0;
+    color: #e8fcfdff;
+    padding: .5rem 1rem;
+    text-align: center;
+    grid-column: 1/3;
+}
+
+#welcome article {
+    display: flex;
+	border-radius: 0 0 10px 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+    padding: 20px 35px;
+    text-align: center;
+}
+
+#welcome article h3 {
+    font-size: 1.8rem;
+}
+
+#loginWin {
+    background-color: rgba(89,174,185,.9);
+    color: #e8fcfdff;
+ }
+ 
+ #registerWin {
+    background-color: rgba(157,241,252,.9);
+    border-radius: 0 0 10px 10px;
+    color: #226169;
+ }
+
+ #loginWin a, #registerWin a {
+    color: #e8fcfdff;
+    border-radius: 15px;
+    padding: .5rem 1rem;
+    margin-top: 15px;
+    min-width: 125px;
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+}
+
+#loginWin a {
+    background-color: rgb(89,174,185);
+    border: solid 2px #fff;
+}
+
+#registerWin a {
+    background-color: #226169;
+    border: solid 2px #226169;
+}
+
+#welcome article:first-of-type {
+    border-radius: 0;
+}
+
+#landing #welcome p {
+font-weight: 200;
+}
+
+@media screen and (min-width: 580px) {
+
+#welcome article:first-of-type {
+    border-radius: 0 0 0 10px;
+}
+
+#welcome article:last-of-type {
+    border-radius: 0 0 10px 0;
+}
+}

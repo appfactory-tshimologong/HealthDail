@@ -1,0 +1,8 @@
+#registerLanding { 
+    background: url(/image/bg3.png) no-repeat bottom center;
+    background-size: contain;
+}
+
+#registerLanding .wrapper {
+    background: linear-gradient(0deg, rgba(10, 16, 119, 0.84) 0%, rgba(32,221,226,0.60) 80%, rgba(192, 254, 252, 0.4) 100%);
+}
